@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FP-FourBox-Viewer.iml" filepath="$PROJECT_DIR$/.idea/modules/FP-FourBox-Viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FP-FourBox-Viewer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/FP-FourBox-Viewer_main.iml" group="FP-FourBox-Viewer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FP-FourBox-Viewer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/FP-FourBox-Viewer_test.iml" group="FP-FourBox-Viewer" />
     </modules>
   </component>
 </project>

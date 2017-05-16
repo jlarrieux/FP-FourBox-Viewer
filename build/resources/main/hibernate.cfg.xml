@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="connection.url">jdbc:sqlserver://FPLIT</property>
+        <property name="connection.username">EOLSA</property>
+        <property name="connection.password">F0c@lpoint</property>
+        <property name="show_sql">true</property>
+
+        <mapping class="com.fp.fourBoxViewer.Entity.Item" />
+
+    </session-factory>
+</hibernate-configuration>
