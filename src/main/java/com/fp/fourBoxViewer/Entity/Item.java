@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
 
 
 
@@ -16,12 +17,14 @@ import javax.persistence.Table;
 @Table(name = "fourbox")
 public class Item {
 
+
     @Id
     @GeneratedValue
     private long id;
 
     private String name, description;
     private int box;
+    private LocalDate dateStarted, dateCompleted;
 
 
 
@@ -69,5 +72,29 @@ public class Item {
 
     public void setBox(int box) {
         this.box = box;
+    }
+
+
+
+    public LocalDate getDateStarted() {
+        return dateStarted;
+    }
+
+
+
+    public void setDateStarted(LocalDate dateStarted) {
+        this.dateStarted = dateStarted;
+    }
+
+
+
+    public LocalDate getDateCompleted() {
+        return dateCompleted;
+    }
+
+
+
+    public void setDateCompleted(LocalDate dateCompleted) {
+        this.dateCompleted = dateCompleted;
     }
 }

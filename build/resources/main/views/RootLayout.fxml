@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="800.0" minWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <JFXTabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+          <Tab text="4 BOXES">
+              <content>
+                  <AnchorPane prefHeight="180.0" prefWidth="200.0">
+                      <GridPane id="4boxGrid" alignment="CENTER" gridLinesVisible="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+                     <rowConstraints>
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" prefHeight="600.0" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" prefHeight="600.0" />
+                     </rowConstraints>
+                     <columnConstraints>
+                        <ColumnConstraints maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+                        <ColumnConstraints maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="600.0" />
+                        <ColumnConstraints maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="600.0" />
+                     </columnConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label contentDisplay="CENTER" minWidth="-Infinity" text="URGENT" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label text="NOT URGENT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="150.0" rotate="-90.0" text="IMPORTANT" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="210.0" rotate="-90.0" text="NOT IMPORTANT" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <content>
+                              <VBox id="vBoxUrgentImportant" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <content>
+                              <VBox id="vboxNotUrgentImportant" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <content>
+                              <VBox id="vBoxUrgentNotImportant" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <content>
+                              <VBox id="vBoxNotUrgentNotImportant" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+                     </children></GridPane>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <buttons>
+                        <JFXButton id="buttonAdd" buttonType="RAISED" ripplerFill="#804545" styleClass="button-raised" stylesheets="@../css/jfoenix-components.css" text="Add  Item" />
+                     </buttons>
+                  </ButtonBar>
+                  </AnchorPane>
+              </content>
+          </Tab>
+          <Tab text="Completed" />
+      </JFXTabPane>
+   </center>
+</BorderPane>
