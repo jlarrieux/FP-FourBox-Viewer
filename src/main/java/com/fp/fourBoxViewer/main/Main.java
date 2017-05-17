@@ -34,8 +34,6 @@ public class Main extends Application{
         primaryStage.setTitle(Constants.FOUR_BOX_VIEWER);
         Scene scene = new Scene(root);
         scene.getStylesheets().add(this.getClass().getResource("/css/jfoenix-components.css").toExternalForm());
-//        Application.setUserAgentStylesheet("css/jfoenix");
-
         this.primaryStage.setScene(scene);
         this.primaryStage.show();
         initializeIDs();
@@ -56,7 +54,7 @@ public class Main extends Application{
         notUrgentImportant = (VBox) lookUp(FX_LookUp.VBOX_NOT_URGENT_IMPORTANT);
         notUrgentNotImportant = (VBox) lookUp(FX_LookUp.VBOX_NOT_URGENT_NOT_IMPORTANT);
         add = (Button) lookUp(FX_LookUp.BUTTON_ADD);
-//        add.getStyleClass().add("button-raised");
+
     }
 
 
