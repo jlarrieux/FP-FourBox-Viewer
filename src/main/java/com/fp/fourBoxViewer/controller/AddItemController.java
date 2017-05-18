@@ -25,15 +25,11 @@ public class AddItemController extends AbstractContainer{
     @FXML private JFXDatePicker startDatePicker;
    private Stage dialogStage;
 
-    public AddItemController(){
 
-    }
 
     public AddItemController(Stage primaryStage){
         this.primaryStage = primaryStage;
         buildAndShow();
-
-
         MyLogger.log.trace("Constructor");
     }
 
@@ -41,7 +37,7 @@ public class AddItemController extends AbstractContainer{
 
     @FXML
     private void getInput(){
-
+        MyLogger.log.trace("getinput");
     }
 
 

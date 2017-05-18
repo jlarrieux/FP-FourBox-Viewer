@@ -9,4 +9,7 @@ public class Constants {
 
 
     public static final String FOUR_BOX_VIEWER = "Four Box Viewer";
+    public enum MODE{
+        EDIT, NEW
+    }
 }

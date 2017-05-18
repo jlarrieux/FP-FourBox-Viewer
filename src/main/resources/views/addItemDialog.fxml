@@ -53,7 +53,7 @@
       </JFXTextField>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
          <buttons>
-            <JFXButton id="addItemAddButton" styleClass="button-raised" stylesheets="@../css/jfoenix-components.css" text="Add" />
+            <JFXButton id="addItemAddButton" onAction="#getInput" styleClass="button-raised" stylesheets="@../css/jfoenix-components.css" text="Add" />
             <JFXButton fx:id="cancel" onAction="#HandleCancel" styleClass="button-raised" stylesheets="@../css/jfoenix-components.css" text="Cancel" />
          </buttons>
       </ButtonBar>

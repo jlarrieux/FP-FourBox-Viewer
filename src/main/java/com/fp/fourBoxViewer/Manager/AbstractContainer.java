@@ -2,6 +2,7 @@ package com.fp.fourBoxViewer.Manager;
 
 
 
+import com.fp.fourBoxViewer.Util.Constants;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
@@ -14,7 +15,7 @@ public abstract class AbstractContainer {
 
 
    protected Stage primaryStage;
-
+   protected Constants.MODE mode = Constants.MODE.NEW;
 
 
    protected Node lookUp(String name){
