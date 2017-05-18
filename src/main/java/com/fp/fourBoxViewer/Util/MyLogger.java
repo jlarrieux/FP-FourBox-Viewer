@@ -12,11 +12,10 @@ import org.apache.logging.log4j.Logger;
  */
 public class MyLogger {
 
-    private static final Logger log = LogManager.getLogger();
+    public static final Logger log = LogManager.getLogger();
 
-    public static Logger getLogger(){
-        return log;
-    }
+
+
 
 
     public static void main(String[] args){
