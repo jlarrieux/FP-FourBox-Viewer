@@ -49,16 +49,13 @@ public class AddItemController extends AbstractContainer{
         GridPane pane = (GridPane) FX_LookUp.LoadResource(loader);
         dialogStage = FX_LookUp.createDialogStage("test",primaryStage, pane );
 
-        AddItemController controller = loader.getController();
         dialogStage.showAndWait();
     }
 
 
     @FXML
     private void HandleCancel(){
-//        MyLogger.printLog(MyLogger.logType.TRACE, "HANDLE CANCEL");
         MyLogger.log.trace("handle cancel");
-
         dialogStage.close();
     }
 

@@ -19,14 +19,14 @@ import javafx.stage.Stage;
 public class Main extends Application{
 
 
-    private BorderPane root;
+
     private Stage primaryStage;
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        root = FXMLLoader.load(getClass().getClassLoader().getResource(FX_LookUp.VIEWS_ROOT_LAYOUT_FXML));
+        BorderPane root = FXMLLoader.load(getClass().getClassLoader().getResource(FX_LookUp.VIEWS_ROOT_LAYOUT_FXML));
         this.primaryStage = primaryStage;
 
         primaryStage.setTitle(Constants.FOUR_BOX_VIEWER);
