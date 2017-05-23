@@ -1,34 +1,55 @@
 import com.fp.fourBoxViewer.Entity.Item
-import com.fp.fourBoxViewer.Manager.ItemManager
 import spock.lang.Specification
 
+import java.time.LocalDate
+
 /**
- * Created by jlarrieux on 5/16/2017.
+ * Created by jlarrieux on 5/23/2017.
  */
 class ItemTest extends Specification{
 
-    def "initial size should be 0"(){
-        given: "an ItemManager"
-        ItemManager manager = new ItemManager();
 
-        when: "no items added yet"
+    def "two equals items are equal"(){
+        given: "a fully defined item"
+        Item i1 = new Item();
+        i1.setName("name")
+        i1.setDescription("this is my description")
+        i1.setDateStarted(LocalDate.now())
 
-        then: "size should be 0"
-        manager.size()==0
+        when: "another item equals the previous one"
+        Item i2 = i1
+
+        then: "equals method should return true"
+        assert i1.equals(i2)
     }
 
 
+    def "two different items should no be equal"(){
+        given: "a fully defined item"
+        Item i1 = new Item();
+        i1.setName("name")
+        i1.setDescription("this is my description")
+        i1.setDateStarted(LocalDate.now())
+
+        when: "another item equals the previous one"
+        Item i2 = new Item()
+
+        then: "equals method should be false"
+        assert !i1.equals(i2)
+    }
 
 
-    def "add an item and expect size  to be 1"(){
-        given: "an Item and ItemManager"
-        Item item = new Item()
-        ItemManager manager = new ItemManager()
+    def "two equals items should have same hashcode"(){
+        given: "a fully defined item"
+        Item i1 = new Item();
+        i1.setName("name")
+        i1.setDescription("this is my description")
+        i1.setDateStarted(LocalDate.now())
 
-        when: "I add Item to ItemManager"
-        manager.add(item)
+        when: "another item equals the previous one"
+        Item i2 = i1
 
-        then: "count should be 1"
-        assert manager.size() ==1
+        then: "equals method should return true"
+        assert i1.hashCode()==i2.hashCode()
     }
 }

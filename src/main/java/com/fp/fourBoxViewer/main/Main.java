@@ -32,6 +32,8 @@ public class Main extends Application{
         primaryStage.setTitle(Constants.FOUR_BOX_VIEWER);
         Scene scene = new Scene(root);
         scene.getStylesheets().add(this.getClass().getResource("/css/jfoenix-components.css").toExternalForm());
+        scene.getStylesheets().add(this.getClass().getResource("/css/RedBorder.css").toExternalForm());
+
         this.primaryStage.setScene(scene);
         this.primaryStage.show();
         initializeContainers();

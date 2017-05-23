@@ -1,5 +1,6 @@
 import com.fp.fourBoxViewer.Boundaries.HibernateManager
 import org.hibernate.Session
+import spock.lang.Ignore
 import spock.lang.Specification
 /**
  * Created by jlarrieux on 5/16/2017.
@@ -7,6 +8,7 @@ import spock.lang.Specification
 class HibernateTest  extends  Specification{
 
 
+    @Ignore
     def "connection is valid"(){
         given: "a valid hibernateManager and session"
         HibernateManager manager = new HibernateManager();

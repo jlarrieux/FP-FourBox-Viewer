@@ -2,10 +2,7 @@ package com.fp.fourBoxViewer.Entity;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 
@@ -14,12 +11,12 @@ import java.time.LocalDate;
  * Created by jlarrieux on 5/16/2017.
  */
 @Entity
-@Table(name = "fourbox")
+@Table(name = "fourbox", catalog = "OKR", schema = "dbo")
 public class Item {
 
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name, description;
@@ -96,5 +93,35 @@ public class Item {
 
     public void setDateCompleted(LocalDate dateCompleted) {
         this.dateCompleted = dateCompleted;
+    }
+
+
+    public String toString(){
+        return String.format("\n******ITEM*********\nName: %s\nDescription: %s\nBox: %d\nStart Date: %s", name,description,box,dateStarted.toString());
+    }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+        if(obj instanceof  Item){
+            Item i = (Item) obj;
+            return getName().equals(i.getName()) && getDescription().equals(i.getDescription()) && getBox()==i.getBox() && getDateStarted().isEqual(i.getDateStarted());
+        }
+
+        return false;
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31*result+getName().hashCode();
+        result = 31*result+getDescription().hashCode();
+        result= 31*result + getBox();
+        result = 31* result + getDateStarted().hashCode();
+        return result;
     }
 }

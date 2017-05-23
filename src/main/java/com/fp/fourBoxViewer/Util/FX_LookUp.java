@@ -4,6 +4,7 @@ package com.fp.fourBoxViewer.Util;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -19,7 +20,7 @@ import java.io.IOException;
 public class FX_LookUp {
 
     private static final String PREFIX = "views/";
-    private static final String PREFIX2 = "/views/";
+    public static final String PREFIX2 = "/views/";
     private static final String CSS_PREFIX = "/css/";
     public static final String VIEWS_ROOT_LAYOUT_FXML = PREFIX + "RootLayout.fxml";
     public static final String VBOX_URGENT_IMPORTANT = "#vBoxUrgentImportant";
@@ -54,10 +55,24 @@ public class FX_LookUp {
     public static Stage createDialogStage(String title, Window owner, Pane pane){
         Stage dialogStage = new Stage();
         dialogStage.setTitle(title);
-        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
         dialogStage.initOwner(owner);
 
         dialogStage.setScene(new Scene(pane));
         return dialogStage;
+    }
+
+
+    public static Stage getDialogStage(String fxml, Object controller, Stage primaryStage){
+        MyLogger.log.trace("Getting loader");
+        FXMLLoader loader = getLoader(fxml);
+        loader.setController(controller);
+        GridPane pane = (GridPane) FX_LookUp.LoadResource(loader);
+        return createDialogStage("",primaryStage,pane);
+
+    }
+
+    public static FXMLLoader getLoader(String fxml){
+        return new FXMLLoader(FX_LookUp.class.getClass().getResource(fxml));
     }
 }

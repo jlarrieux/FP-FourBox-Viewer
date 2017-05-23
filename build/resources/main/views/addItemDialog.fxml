@@ -14,8 +14,8 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="450.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="0.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="500.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -35,18 +35,21 @@
       <Label text="Description" GridPane.rowIndex="2" />
       <Label text="Box Location" GridPane.rowIndex="3" />
       <Label text="Start Date" GridPane.rowIndex="4" />
-      <JFXDatePicker id="addItemStartDateDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <JFXTextField id="addItemBoxLocationTextField" maxWidth="-Infinity" minWidth="50.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <JFXDatePicker id="addItemStartDateDatePicker" fx:id="startDatePicker" minWidth="20.0" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></JFXDatePicker>
+      <JFXTextField id="addItemBoxLocationTextField" fx:id="boxLocation" maxWidth="-Infinity" minWidth="50.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </GridPane.margin>
       </JFXTextField>
-      <JFXTextArea id="addItemDescritionTextArea" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="50.0" promptText="Enter Description" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <JFXTextArea id="addItemDescritionTextArea" fx:id="description" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="50.0" promptText="Enter Description" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </GridPane.margin>
       </JFXTextArea>
-      <JFXTextField id="addItemNameTextField" promptText="Enter Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <JFXTextField id="addItemNameTextField" fx:id="name" promptText="Enter Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </GridPane.margin>
@@ -59,6 +62,6 @@
       </ButtonBar>
    </children>
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
    </padding>
 </GridPane>

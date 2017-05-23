@@ -9,6 +9,8 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.util.ArrayList;
+
 
 
 /**
@@ -64,11 +66,9 @@ public class HibernateManager implements Persistence {
 
 
     @Override
-    public void update() {
+    public void update(Item item) {
         setUp();
-
-
-
+        session.update(item);
         exit();
 
     }
@@ -76,13 +76,10 @@ public class HibernateManager implements Persistence {
 
 
     @Override
-    public void delete() {
+    public void delete(Item item) {
         setUp();
-
-
-
+        session.delete(item);
         exit();
-
     }
 
 
@@ -93,6 +90,18 @@ public class HibernateManager implements Persistence {
         session.close();
         sessionFactory.close();
     }
+
+
+
+    public ArrayList loadAll(){
+        setUp();
+        ArrayList<Item> list = (ArrayList) session.createQuery("FROM com.fp.fourBoxViewer.Entity.Item").list();   //.createCriteria(Item.class).list();
+        exit();
+        return list;
+    }
+
+
+
 
     public static void main(String[] args){
         HibernateManager hibernateManager = new HibernateManager();
