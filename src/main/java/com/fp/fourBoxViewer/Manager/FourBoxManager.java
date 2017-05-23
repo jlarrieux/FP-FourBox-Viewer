@@ -54,7 +54,7 @@ public class FourBoxManager extends AbstractContainer {
 
     private void buildAndShow(){
         MyLogger.log.trace("build from 4box");
-       AddItemController controller= new AddItemController(primaryStage, this);
+        new AddItemController(primaryStage, this);
     }
 
 
