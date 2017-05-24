@@ -4,6 +4,9 @@ package com.fp.fourBoxViewer.Entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 
 
@@ -12,16 +15,20 @@ import java.time.LocalDate;
  */
 @Entity
 @Table(name = "fourbox", catalog = "OKR", schema = "dbo")
-public class Item {
+public class Item extends Observable {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name, description;
+    private String name;
     private int box;
+    private boolean complete;
     private LocalDate dateStarted, dateCompleted;
+
+    @Transient
+    private ArrayList<Observer> observers = new ArrayList<>();
 
 
 
@@ -49,15 +56,6 @@ public class Item {
 
 
 
-    public String getDescription() {
-        return description;
-    }
-
-
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
 
 
@@ -96,8 +94,23 @@ public class Item {
     }
 
 
+
+    public boolean isComplete() {
+        return complete;
+    }
+
+
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
+    }
+
+
+
     public String toString(){
-        return String.format("\n******ITEM*********\nName: %s\nDescription: %s\nBox: %d\nStart Date: %s", name,description,box,dateStarted.toString());
+        String datecompleteString = "null";
+        if(dateCompleted!=null) datecompleteString = dateCompleted.toString();
+        return String.format("\n******ITEM*********\nName: %s\nBox: %d\nid: %d\nStart Date: %s\nComplete date: %s\n complete: %b", name,box,id,dateStarted.toString(), datecompleteString, complete);
     }
 
 
@@ -107,7 +120,7 @@ public class Item {
         if(this==obj) return true;
         if(obj instanceof  Item){
             Item i = (Item) obj;
-            return getName().equals(i.getName()) && getDescription().equals(i.getDescription()) && getBox()==i.getBox() && getDateStarted().isEqual(i.getDateStarted());
+            return getName().equals(i.getName()) &&  getBox()==i.getBox() && getDateStarted().isEqual(i.getDateStarted());
         }
 
         return false;
@@ -119,9 +132,29 @@ public class Item {
     public int hashCode() {
         int result = 17;
         result = 31*result+getName().hashCode();
-        result = 31*result+getDescription().hashCode();
         result= 31*result + getBox();
         result = 31* result + getDateStarted().hashCode();
         return result;
+    }
+
+
+
+    @Override
+    public synchronized void addObserver(Observer o) {
+        observers.add(o);
+    }
+
+
+
+    @Override
+    public synchronized void deleteObserver(Observer o) {
+        observers.remove(o);
+    }
+
+
+
+    @Override
+    public void notifyObservers() {
+        for(Observer observer: observers) observer.update(this, null);
     }
 }

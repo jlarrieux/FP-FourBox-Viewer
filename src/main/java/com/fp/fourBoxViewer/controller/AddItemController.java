@@ -10,10 +10,9 @@ import com.github.jlarrieux.main.NumericValidator;
 import com.github.jlarrieux.main.ValidationObject.AbstractComponentValidationObject;
 import com.github.jlarrieux.main.ValidationObject.JavaFXValidationObject;
 import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
@@ -26,17 +25,23 @@ import java.util.ArrayList;
  */
 public class AddItemController extends AbstractContainer{
     @FXML private JFXTextField name, boxLocation;
-    @FXML private TextField boxLocation2;
-    @FXML private JFXTextArea description;
     @FXML private JFXDatePicker startDatePicker;
+    @FXML private Label label;
     private Stage dialogStage;
     private Item item;
-    private ItemController itemController;
+    private ItemNonCompleteController itemNonCompleteController;
     private ItemControllerHandler handler;
+    private MODE mode;
+
+    public enum MODE{
+        EDIT, ADD
+    }
 
 
 
-    public AddItemController(Stage primaryStage, ItemControllerHandler handler){
+    public AddItemController(Stage primaryStage, ItemControllerHandler handler, MODE mode, ItemNonCompleteController controller){
+        this.controller = controller;
+        this.mode = mode;
         this.handler = handler;
         this.primaryStage = primaryStage;
         buildAndShow();
@@ -53,8 +58,8 @@ public class AddItemController extends AbstractContainer{
     private void getInput(){
         MyLogger.log.debug("getinput");
         if(!validate()){
-            if(itemController ==null) executeAdd();
-//            else executeEdit();
+            if(mode == MODE.ADD) executeAdd();
+            else if(mode ==MODE.EDIT) executeEdit();
         }
 
 
@@ -66,18 +71,24 @@ public class AddItemController extends AbstractContainer{
         item = new Item();
         populateItem();
         MyLogger.log.trace(item.toString());
-        ItemController  controller = new ItemController();
+        ItemNonCompleteController controller = new ItemNonCompleteController(primaryStage);
         controller.setItem(item);
         handler.handleController(controller);
         dialogStage.close();
 
     }
 
+    private void executeEdit(){
+        item = controller.getItem();
+        populateItem();
+        controller.setItem(item);
+        handler.handleController(controller);
+        dialogStage.close();
+    }
 
 
     private void populateItem(){
         item.setName(name.getText());
-        item.setDescription(description.getText());
         item.setBox(Integer.parseInt(boxLocation.getText()));
         item.setDateStarted(startDatePicker.getValue());
     }
@@ -96,9 +107,19 @@ public class AddItemController extends AbstractContainer{
         MyLogger.log.trace("building + " );
         if(primaryStage==null) MyLogger.log.trace("null primary stage");
          dialogStage= FX_LookUp.getDialogStage(FX_LookUp.ADD_ITEM_DIALOG_FXML,this,dialogStage);
+         if(mode== MODE.EDIT){
+             populateGUI();
+             label.setText("Edit Item");
+         }
          dialogStage.showAndWait();
     }
 
+    private void populateGUI(){
+        Item item1 =controller. getItem();
+        name.setText(item1.getName());
+        boxLocation.setText(String.valueOf(item1.getBox()));
+        startDatePicker.setValue(item1.getDateStarted());
+    }
 
     @FXML
     private void HandleCancel(){
@@ -109,7 +130,10 @@ public class AddItemController extends AbstractContainer{
 
 
     @Override
-    public void handleController(ItemController controller) {
-        this.itemController = controller;
+    public void handleController(ItemNonCompleteController controller) {
+        this.itemNonCompleteController = controller;
     }
+
+
+
 }

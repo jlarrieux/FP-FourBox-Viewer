@@ -7,9 +7,9 @@ package com.fp.fourBoxViewer.controller;
  */
 public interface ItemControllerHandler {
 
-    public ItemController getController();
-    public void setController(ItemController controller);
-    void handleController(ItemController controller);
+    public ItemNonCompleteController getController();
+    public void setController(ItemNonCompleteController controller);
+    void handleController(ItemNonCompleteController controller);
 
 
 }

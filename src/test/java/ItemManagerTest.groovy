@@ -25,8 +25,8 @@ class ItemManagerTest extends Specification{
         Item item = new Item()
         ItemManager manager = new ItemManager()
 
-        when: "I add Item to ItemManager"
-        manager.add(item)
+        when: "I addToNonComplete Item to ItemManager"
+        manager.addToNonComplete(item)
 
         then: "count should be 1"
         assert manager.size() ==1
@@ -43,7 +43,7 @@ class ItemManagerTest extends Specification{
 
 
         when: "item is added to item manager"
-        manager.add(item)
+        manager.addToNonComplete(item)
 
 
         then: "calling contains with that same item should return true"

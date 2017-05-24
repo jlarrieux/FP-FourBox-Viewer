@@ -4,6 +4,8 @@ package com.fp.fourBoxViewer.Util;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -11,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.util.Optional;
 
 
 
@@ -24,16 +27,12 @@ public class FX_LookUp {
     private static final String CSS_PREFIX = "/css/";
     public static final String VIEWS_ROOT_LAYOUT_FXML = PREFIX + "RootLayout.fxml";
     public static final String VBOX_URGENT_IMPORTANT = "#vBoxUrgentImportant";
-    public static final String ADD_ITEM_NAME = "#addItemNameTextField";
-    public static final String ADD_ITEM_DESCRIPTION = "#addItemDescriptionTextArea";
-    public static final String ADD_ITEM_BOXLOCATION = "#addItemBoxLocationTextField";
-    public static final String ADD_ITEM_START_DATEPICKER = "#addItemStartDatePicker";
-    public static final String ADD_ITEM_ADD_BUTTON = "#addItemAddButton";
-    public static final String ADD_ITEM_CANCEL_BUTTON = "#addItemCancelButton";
+    public static final String VBOX_COMPLETE = "#vBoxComplete";
     public static final String VBOX_URGENT_NOT_IMPORTANT = "#vBoxUrgentNotImportant";
     public static final String VBOX_NOT_URGENT_NOT_IMPORTANT = "#vBoxNotUrgentNotImportant";
-    public static final String VBOX_NOT_URGENT_IMPORTANT= "#vBoxNotUrgentImportant";
+    public static final String VBOX_NOT_URGENT_IMPORTANT= "#vboxNotUrgentImportant";
     public static final String BUTTON_ADD = "#buttonAdd";
+    public static final String ORDER_BY = "#orderBy";
     public static final String MY_LIGHT = getCSSResource("myLight.css");
     public static final String JMETRO_LIGHT_THEME_CSS =  getCSSResource("JMetroLight.css");
     public static final String ADD_ITEM_DIALOG_FXML =PREFIX2+ "addItemDialog.fxml";
@@ -75,4 +74,21 @@ public class FX_LookUp {
     public static FXMLLoader getLoader(String fxml){
         return new FXMLLoader(FX_LookUp.class.getClass().getResource(fxml));
     }
+
+
+
+    public static boolean ConfirmationDialog(ConfirmationDialogObject object){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(object.getTitle());
+        alert.setHeaderText(object.getHeader());
+        alert.setContentText(object.getContentText());
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if(result.get()== ButtonType.OK) return true;
+        else return false;
+    }
+
+
+
+
 }

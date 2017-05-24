@@ -22,6 +22,19 @@ public class HibernateManager implements Persistence {
     private Session session;
 
 
+    private HibernateManager(){
+
+    }
+
+
+    private static class LazyHolder{
+        private  static final HibernateManager INSTANCE = new HibernateManager();
+    }
+
+    public static HibernateManager getInstance(){
+        return LazyHolder.INSTANCE;
+    }
+
     private void setUp() {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure()
@@ -93,12 +106,18 @@ public class HibernateManager implements Persistence {
 
 
 
-    public ArrayList loadAll(){
+    public ArrayList<Item> loadAll(boolean complete){
         setUp();
-        ArrayList<Item> list = (ArrayList) session.createQuery("FROM com.fp.fourBoxViewer.Entity.Item").list();   //.createCriteria(Item.class).list();
+        int i=0;
+        if(complete) i=1;
+
+        ArrayList<Item> list = (ArrayList) session.createQuery(String.format("FROM com.fp.fourBoxViewer.Entity.Item WHERE complete=%d", i)).list();
         exit();
         return list;
     }
+
+
+
 
 
 
