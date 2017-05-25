@@ -10,6 +10,8 @@ import com.fp.fourBoxViewer.controller.AbstractItemController;
 import com.fp.fourBoxViewer.controller.AddItemController;
 import com.fp.fourBoxViewer.controller.ItemCompleteController;
 import com.fp.fourBoxViewer.controller.ItemNonCompleteController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -21,13 +23,17 @@ import javafx.stage.Stage;
 /**
  * Created by jlarrieux on 5/18/2017.
  */
-public class FourBoxManager extends AbstractContainer  implements MainContainer{
+public class FourBoxManager extends AbstractContainer  implements MainContainer, ChangeListener{
 
 
     private VBox urgentImportant, urgentNotImportant, notUrgentImportant, notUrgentNotImportant, complete;
     private Button add;
     private ItemManager itemManager = new ItemManager(this);
-    private ComboBox orderBy;
+    private ComboBox<String> orderBy;
+
+
+
+
 
 
     private enum itemControllerType{
@@ -54,11 +60,19 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer{
 
         buildOrderBy();
         add.addEventHandler(ActionEvent.ACTION, event -> buildAndShow());
+        orderBy.valueProperty().addListener(this);
     }
 
 
     private void buildOrderBy(){
-        orderBy.getItems().addAll(Constants.ORDER_BY_NAME, Constants.ORDER_BY_LAST_BOX_NUMBER, Constants.ORDER_BY_START_DATE, Constants.ORDER_BY_COMPLETED_DATE);
+        orderBy.getItems().addAll(Constants.ORDER_BY_NAME_ASC,
+                Constants.ORDER_BY_NAME_DES,
+                Constants.ORDER_BY_LAST_BOX_NUMBER_ASC,
+                Constants.ORDER_BY_LAST_BOX_NUMBER_DES,
+                Constants.ORDER_BY_START_DATE_ASC,
+                Constants.ORDER_BY_START_DATE_DES,
+                Constants.ORDER_BY_COMPLETED_DATE_ASC,
+                Constants.ORDER_BY_COMPLETED_DATE_DES);
     }
 
     private void buildAndShow(){
@@ -80,9 +94,7 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer{
         MyLogger.log.debug("Number of children before: "+ urgentImportant.getChildren().size());
         Item item = controller.getItem();
         loadItem(controller);
-
         if(updateOrCreate) itemManager.updateOrCreate(item);
-
         MyLogger.log.debug("Number of children after: "+ urgentImportant.getChildren().size());
     }
 
@@ -144,6 +156,12 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer{
         }
     }
 
+    @Override
+    public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+        String s = newValue.toString();
+        itemManager.sortCompleteList(s);
+
+    }
 
 
 

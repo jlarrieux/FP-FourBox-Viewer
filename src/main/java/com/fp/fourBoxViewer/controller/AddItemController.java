@@ -12,6 +12,7 @@ import com.github.jlarrieux.main.ValidationObject.JavaFXValidationObject;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -24,7 +25,8 @@ import java.util.ArrayList;
  * Created by jlarrieux on 5/18/2017.
  */
 public class AddItemController extends AbstractContainer{
-    @FXML private JFXTextField name, boxLocation;
+    @FXML private JFXTextField name;
+    @FXML private ComboBox<String> boxLocation;
     @FXML private JFXDatePicker startDatePicker;
     @FXML private Label label;
     private Stage dialogStage;
@@ -52,6 +54,7 @@ public class AddItemController extends AbstractContainer{
     @FXML
     private void initialize(){
         startDatePicker.setValue(LocalDate.now());
+        boxLocation.getItems().addAll("1","2","3","4");
     }
 
     @FXML
@@ -89,7 +92,7 @@ public class AddItemController extends AbstractContainer{
 
     private void populateItem(){
         item.setName(name.getText());
-        item.setBox(Integer.parseInt(boxLocation.getText()));
+        item.setBox(Integer.parseInt(boxLocation.getValue()));
         item.setDateStarted(startDatePicker.getValue());
     }
 
@@ -98,7 +101,6 @@ public class AddItemController extends AbstractContainer{
     private boolean validate(){
         NumericValidator val = new NumericValidator();
         ArrayList<AbstractComponentValidationObject> validationObjects = new ArrayList<>();
-        validationObjects.add(new JavaFXValidationObject(boxLocation, "Box Location", NumericValidator.NumberType.INTEGER));
         validationObjects.add(new JavaFXValidationObject(name,"Name", NumericValidator.NumberType.Plain));
         return val.validate(validationObjects);
     }
@@ -117,7 +119,7 @@ public class AddItemController extends AbstractContainer{
     private void populateGUI(){
         Item item1 =controller. getItem();
         name.setText(item1.getName());
-        boxLocation.setText(String.valueOf(item1.getBox()));
+        boxLocation.setValue(String.valueOf(item1.getBox()));
         startDatePicker.setValue(item1.getDateStarted());
     }
 

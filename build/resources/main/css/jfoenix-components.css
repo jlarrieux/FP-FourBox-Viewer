@@ -265,6 +265,7 @@
 
 .combo-box-popup .list-view .jfx-list-cell:filled:hover {
     -fx-text-fill: black;
+    -fx-background-color: #0095C8;
 }
 
 .combo-box-popup .list-view .jfx-list-cell .jfx-rippler {

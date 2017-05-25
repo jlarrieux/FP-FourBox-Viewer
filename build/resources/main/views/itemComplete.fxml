@@ -24,12 +24,12 @@
    <children>
       <VBox minHeight="-Infinity">
          <children>
-            <Label text="Name:" underline="true">
+            <Label text="Name:" textFill="#0a0a8d" underline="true">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="name" text="Label" />
+            <Label fx:id="name" text="Label" textFill="#ab7729" />
          </children>
          <GridPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -37,12 +37,12 @@
       </VBox>
       <VBox minHeight="-Infinity" GridPane.columnIndex="1">
          <children>
-            <Label text="Last Box:" underline="true">
+            <Label text="Last Box:" textFill="#0a0a8d" underline="true">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="box" text="Label" />
+            <Label fx:id="box" text="Label" textFill="#ab7729" />
          </children>
          <GridPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -50,12 +50,12 @@
       </VBox>
       <VBox minHeight="-Infinity" GridPane.columnIndex="2">
          <children>
-            <Label text="Date Started:" underline="true">
+            <Label text="Date Started:" textFill="#0a0a8d" underline="true">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="dateStarted" text="Label" />
+            <Label fx:id="dateStarted" text="Label" textFill="#ab7729" />
          </children>
          <GridPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -63,12 +63,12 @@
       </VBox>
       <VBox minHeight="-Infinity" GridPane.columnIndex="3">
          <children>
-            <Label text="Date Complete:" underline="true">
+            <Label text="Date Complete:" textFill="#0a0a8d" underline="true">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="dateCompleted" text="Label" />
+            <Label fx:id="dateCompleted" text="Label" textFill="#ab7729" />
          </children>
          <GridPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

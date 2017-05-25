@@ -29,6 +29,19 @@ public class Item extends Observable {
 
     @Transient
     private ArrayList<Observer> observers = new ArrayList<>();
+    @Transient private boolean toBeDeleted = false;
+
+
+
+    public boolean isToBeDeleted() {
+        return toBeDeleted;
+    }
+
+
+
+    public void setToBeDeleted(boolean toBeDeleted) {
+        this.toBeDeleted = toBeDeleted;
+    }
 
 
 
@@ -157,4 +170,6 @@ public class Item extends Observable {
     public void notifyObservers() {
         for(Observer observer: observers) observer.update(this, null);
     }
+
+
 }

@@ -11,6 +11,8 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.stage.Stage;
 
 
@@ -48,7 +50,14 @@ public class ItemNonCompleteController extends AbstractItemController implements
 
 
     private void handleDeleteItem() {
-        //TODO
+        ConfirmationDialogObject object = new ConfirmationDialogObject();
+        object.setTitle("Confirm Delete");
+        object.setHeader("Confirming Delete Item");
+        object.setContentText("Are you sure you want to delete this item?\nPlease consider marking this as complete instead.");
+        if(FX_LookUp.ConfirmationDialog(object)){
+            item.setToBeDeleted(true);
+            item.notifyObservers();
+        }
     }
 
 
@@ -82,6 +91,7 @@ public class ItemNonCompleteController extends AbstractItemController implements
     @Override
     protected void populate(){
         name.setText( item.getName());
+        name.setFont(Font.font("Arial", FontPosture.ITALIC, 12));
 
     }
 
@@ -111,6 +121,7 @@ public class ItemNonCompleteController extends AbstractItemController implements
 
     @Override
     String setView() {
+        MyLogger.log.info(FX_LookUp.PREFIX2+ITEM_NON_COMPLETE_FXML);
         return FX_LookUp.PREFIX2 + ITEM_NON_COMPLETE_FXML;
     }
 }
