@@ -116,7 +116,7 @@
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 14px;
     -jfx-button-type: RAISED;
-    -fx-background-color: rgb(77, 102, 204);
+    -fx-background-color: #1044A1/*rgb(77, 102, 204)*/;
     -fx-pref-width: 200;
     -fx-text-fill: WHITE;
 }
@@ -265,7 +265,7 @@
 
 .combo-box-popup .list-view .jfx-list-cell:filled:hover {
     -fx-text-fill: black;
-    -fx-background-color: #0095C8;
+    -fx-background-color: #0096C9;
 }
 
 .combo-box-popup .list-view .jfx-list-cell .jfx-rippler {

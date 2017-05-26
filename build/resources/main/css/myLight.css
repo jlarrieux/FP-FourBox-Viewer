@@ -3,8 +3,31 @@
 
 
 
-.jfx-text-field{
 
 
 
+.label.top{
+    -fx-font-size: 8pt;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #004b54;
+
+}
+
+.label.text{
+    -fx-font-size: 10pt;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #42cadb;
+}
+
+
+.label.live{
+    -fx-font-size: 10pt;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #1044a1;
+}
+
+
+.label.big{
+    -fx-font-size: 15pt;
+    -fx-font-family: "Arial Black";
 }

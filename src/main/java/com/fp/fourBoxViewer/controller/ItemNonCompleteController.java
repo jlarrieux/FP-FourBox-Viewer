@@ -11,8 +11,6 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
 import javafx.stage.Stage;
 
 
@@ -91,7 +89,7 @@ public class ItemNonCompleteController extends AbstractItemController implements
     @Override
     protected void populate(){
         name.setText( item.getName());
-        name.setFont(Font.font("Arial", FontPosture.ITALIC, 12));
+//        name.setFont(Font.font("Arial", FontPosture.ITALIC, 12));
 
     }
 
