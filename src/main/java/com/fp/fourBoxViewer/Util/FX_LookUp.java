@@ -41,7 +41,7 @@ public class FX_LookUp {
         return  FX_LookUp.class.getResource(CSS_PREFIX+name).toExternalForm();
     }
 
-    public static Pane LoadResource(FXMLLoader loader){
+    public static Pane loadResource(FXMLLoader loader){
         try {
             return loader.load();
         } catch (IOException E){
@@ -66,7 +66,7 @@ public class FX_LookUp {
         MyLogger.log.trace("Getting loader");
         FXMLLoader loader = getLoader(fxml);
         loader.setController(controller);
-        GridPane pane = (GridPane) FX_LookUp.LoadResource(loader);
+        GridPane pane = (GridPane) FX_LookUp.loadResource(loader);
         return createDialogStage("",primaryStage,pane);
 
     }
@@ -77,7 +77,7 @@ public class FX_LookUp {
 
 
 
-    public static boolean ConfirmationDialog(ConfirmationDialogObject object){
+    public static boolean confirmationDialog(ConfirmationDialogObject object){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(object.getTitle());
         alert.setHeaderText(object.getHeader());

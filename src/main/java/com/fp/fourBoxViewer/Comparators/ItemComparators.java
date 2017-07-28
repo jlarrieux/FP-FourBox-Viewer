@@ -25,7 +25,7 @@ public class ItemComparators {
 
         @Override
         public int compare(Item o1, Item o2) {
-            return -o1.getName().compareTo(o2.getName());
+            return o2.getName().compareTo(o1.getName());
         }
     }
 
@@ -43,7 +43,7 @@ public class ItemComparators {
 
         @Override
         public int compare(Item o1, Item o2) {
-            return -Integer.compare(o1.getBox(), o2.getBox());
+            return Integer.compare(o2.getBox(), o1.getBox());
         }
     }
 
@@ -61,7 +61,7 @@ public class ItemComparators {
 
         @Override
         public int compare(Item o1, Item o2) {
-            return -o1.getDateStarted().compareTo(o2.getDateStarted());
+            return o2.getDateStarted().compareTo(o1.getDateStarted());
         }
     }
 
@@ -78,7 +78,7 @@ public class ItemComparators {
 
         @Override
         public int compare(Item o1, Item o2) {
-            return -o1.getDateCompleted().compareTo(o2.getDateCompleted());
+            return o2.getDateCompleted().compareTo(o1.getDateCompleted());
         }
     }
 

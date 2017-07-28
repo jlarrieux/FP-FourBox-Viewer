@@ -124,14 +124,17 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer,
     }
 
     private AbstractItemController createItemController(Item item, itemControllerType type){
-        AbstractItemController controller= null;
-        if(type==itemControllerType.NON_COMPLETE) controller = new ItemNonCompleteController(primaryStage);
-        else if(type==itemControllerType.COMPLETE) controller = new ItemCompleteController();
+        AbstractItemController controller= createController(type);
         controller.setItem(item);
         return controller;
     }
 
 
+    private AbstractItemController createController(itemControllerType type){
+        if(type==itemControllerType.NON_COMPLETE) return new ItemNonCompleteController(primaryStage);
+        else if(type==itemControllerType.COMPLETE) return new ItemCompleteController();
+        return null;
+    }
 
 
     private void clearAllNonCompleteItem(){

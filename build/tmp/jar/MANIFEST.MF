@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Class-Path: [hibernate-entitymanager-5.2.10.Final.jar, log4j-core-2.8.
+ 2.jar, log4j-api-2.8.2.jar, jfoenix-1.6.0.jar, mssql-jdbc-6.1.0.jre8.
+ jar, numeric-validator-1.1-rc.jar, hibernate-core-5.2.10.Final.jar, h
+ ibernate-commons-annotations-5.0.1.Final.jar, jboss-logging-3.3.0.Fin
+ al.jar, dom4j-1.6.1.jar, hibernate-jpa-2.1-api-1.0.0.Final.jar, javas
+ sist-3.20.0-GA.jar, byte-buddy-1.6.6.jar, jboss-transaction-api_1.2_s
+ pec-1.0.1.Final.jar, azure-keyvault-0.9.3.jar, guava-21.0.jar, antlr-
+ 2.7.7.jar, jandex-2.0.3.Final.jar, classmate-1.3.0.jar, azure-core-0.
+ 9.3.jar, httpclient-4.3.6.jar, javax.inject-1.jar, adal4j-1.0.0.jar, 
+ oauth2-oidc-sdk-4.5.jar, commons-codec-1.10.jar, commons-lang-2.6.jar
+ , mail-1.4.7.jar, jersey-client-1.13.jar, jersey-json-1.13.jar, httpc
+ ore-4.3.3.jar, commons-logging-1.1.3.jar, gson-2.2.4.jar, slf4j-api-1
+ .7.5.jar, jaxb-impl-2.2.3-1.jar, jaxb-api-2.2.2.jar, activation-1.1.j
+ ar, jersey-core-1.13.jar, jettison-1.1.jar, jackson-jaxrs-1.9.2.jar, 
+ jackson-xc-1.9.2.jar, jackson-mapper-asl-1.9.2.jar, jackson-core-asl-
+ 1.9.2.jar, nimbus-jose-jwt-3.1.2.jar, jcip-annotations-1.0.jar, commo
+ ns-lang3-3.3.1.jar, lang-tag-1.4.jar, json-smart-1.1.1.jar, stax-api-
+ 1.0.1.jar, bcprov-jdk15on-1.51.jar, stax-api-1.0-2.jar]
+Main-Class: fp.fourBoxViewer.main.Main
+

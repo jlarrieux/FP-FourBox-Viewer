@@ -3,8 +3,8 @@ package com.fp.fourBoxViewer.main;
 
 
 import com.fp.fourBoxViewer.Manager.FourBoxManager;
-import com.fp.fourBoxViewer.Util.Constants;
 import com.fp.fourBoxViewer.Util.FX_LookUp;
+import com.fp.fourBoxViewer.Util.Constants;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

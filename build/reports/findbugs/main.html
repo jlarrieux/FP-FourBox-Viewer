@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>C:\Users\Jlarrieux\Documents\Intellij IDEA Projects\FP-FourBox-Viewer\build\classes\java\main</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>728 lines of code analyzed,
+	in 31 classes, 
+	in 7 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">9</td>
+<td align="right">12.36</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>9</b>
+</td>
+<td align="right">
+<b>12.36</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">8</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>9</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65688');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemBoxComparatorAscending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65688" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemBoxComparatorAscending<br/>At ItemComparators.java:[lines 33-37]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65723');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemBoxComparatorDescending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65723" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemBoxComparatorDescending<br/>At ItemComparators.java:[lines 42-46]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65758');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemCompleteDateComparatorAscending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65758" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemCompleteDateComparatorAscending<br/>At ItemComparators.java:[lines 68-72]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65793');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemCompleteDateComparatorDescending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65793" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemCompleteDateComparatorDescending<br/>At ItemComparators.java:[lines 77-81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65828');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemNameComparatorAscending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65828" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemNameComparatorAscending<br/>At ItemComparators.java:[lines 16-19]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65863');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemNameComparatorDescending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65863" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemNameComparatorDescending<br/>At ItemComparators.java:[lines 24-28]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65898');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemStartDateComparatorAscending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65898" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemStartDateComparatorAscending<br/>At ItemComparators.java:[lines 51-55]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65933');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>com.fp.fourBoxViewer.Comparators.ItemComparators$ItemStartDateComparatorDescending implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65933" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Comparators.ItemComparators$ItemStartDateComparatorDescending<br/>At ItemComparators.java:[lines 60-64]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65968');">
+<td>
+<span class="priority-2">BC</span>
+</td>
+<td>Unchecked/unconfirmed cast from java.util.Observable to com.fp.fourBoxViewer.Entity.Item in com.fp.fourBoxViewer.Manager.ItemManager.update(Observable, Object)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65968" style="display: none;">
+<a href="#BC_UNCONFIRMED_CAST">Bug type BC_UNCONFIRMED_CAST (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.Manager.ItemManager<br/>In method com.fp.fourBoxViewer.Manager.ItemManager.update(Observable, Object)<br/>Actual type java.util.Observable<br/>Expected com.fp.fourBoxViewer.Entity.Item<br/>Value loaded from o<br/>At ItemManager.java:[line 108]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="BC_UNCONFIRMED_CAST">BC_UNCONFIRMED_CAST: Unchecked/unconfirmed cast</a>
+</h2>
+
+<p>
+This cast is unchecked, and not all instances of the type casted from can be cast to
+the type it is being cast to. Check that your program logic ensures that this
+cast will not fail.
+</p>
+
+    
+<h2>
+<a name="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">SE_COMPARATOR_SHOULD_BE_SERIALIZABLE: Comparator doesn't implement Serializable</a>
+</h2>
+
+  <p> This class implements the <code>Comparator</code> interface. You
+should consider whether or not it should also implement the <code>Serializable</code>
+interface. If a comparator is used to construct an ordered collection
+such as a <code>TreeMap</code>, then the <code>TreeMap</code>
+will be serializable only if the comparator is also serializable.
+As most comparators have little or no state, making them serializable
+is generally easy and good defensive programming.
+</p>
+
+    </body>
+</html>

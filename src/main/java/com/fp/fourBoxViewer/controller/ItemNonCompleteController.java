@@ -2,9 +2,9 @@ package com.fp.fourBoxViewer.controller;
 
 
 
-import com.fp.fourBoxViewer.Util.ConfirmationDialogObject;
 import com.fp.fourBoxViewer.Util.FX_LookUp;
 import com.fp.fourBoxViewer.Util.MyLogger;
+import com.fp.fourBoxViewer.Util.ConfirmationDialogObject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ContextMenu;
@@ -52,7 +52,7 @@ public class ItemNonCompleteController extends AbstractItemController implements
         object.setTitle("Confirm Delete");
         object.setHeader("Confirming Delete Item");
         object.setContentText("Are you sure you want to delete this item?\nPlease consider marking this as complete instead.");
-        if(FX_LookUp.ConfirmationDialog(object)){
+        if(FX_LookUp.confirmationDialog(object)){
             item.setToBeDeleted(true);
             item.notifyObservers();
         }
@@ -65,7 +65,7 @@ public class ItemNonCompleteController extends AbstractItemController implements
         object.setTitle("Confirm Completed");
         object.setHeader("Confirming Complete");
         object.setContentText("Are you sure you want to mark this Item complete?");
-        if(FX_LookUp.ConfirmationDialog(object)){
+        if(FX_LookUp.confirmationDialog(object)){
             item.setComplete(true);
             item.notifyObservers();
         }

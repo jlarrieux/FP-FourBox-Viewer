@@ -111,7 +111,7 @@ public class HibernateManager implements Persistence {
         int i=0;
         if(complete) i=1;
 
-        ArrayList<Item> list = (ArrayList) session.createQuery(String.format("FROM com.fp.fourBoxViewer.Entity.Item WHERE complete=%d", i)).list();
+        ArrayList<Item> list = (ArrayList) session.createQuery(String.format("FROM Item WHERE complete=%d", i)).list();
         exit();
         return list;
     }

@@ -3,6 +3,7 @@ package com.fp.fourBoxViewer.controller;
 
 
 import com.fp.fourBoxViewer.Entity.Item;
+import com.fp.fourBoxViewer.Entity.Type;
 import com.fp.fourBoxViewer.Manager.AbstractContainer;
 import com.fp.fourBoxViewer.Util.FX_LookUp;
 import com.fp.fourBoxViewer.Util.MyLogger;
@@ -10,6 +11,7 @@ import com.github.jlarrieux.main.NumericValidator;
 import com.github.jlarrieux.main.ValidationObject.AbstractComponentValidationObject;
 import com.github.jlarrieux.main.ValidationObject.JavaFXValidationObject;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -18,20 +20,23 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 
 
 /**
  * Created by jlarrieux on 5/18/2017.
  */
-public class AddItemController extends AbstractContainer{
-    @FXML private JFXTextField name;
-    @FXML private ComboBox<String> boxLocation;
+public class AddItemController extends AbstractContainer {
+    @FXML private JFXTextField name, technician;
+    @FXML private JFXTextArea status;
+    @FXML private ComboBox<String> boxLocation, projectType;
     @FXML private JFXDatePicker startDatePicker;
     @FXML private Label label;
     private Stage dialogStage;
     private Item item;
-    private ItemNonCompleteController itemNonCompleteController;
+
     private ItemControllerHandler handler;
     private MODE mode;
 
@@ -55,12 +60,14 @@ public class AddItemController extends AbstractContainer{
     private void initialize(){
         startDatePicker.setValue(LocalDate.now());
         boxLocation.getItems().addAll("1","2","3","4");
+        projectType.getItems().addAll( Arrays.stream(Type.values()).map(e->e.toString()).collect(Collectors.toList()));
     }
 
     @FXML
     private void getInput(){
         MyLogger.log.debug("getinput");
         if(!validate()){
+            populateItem();
             if(mode == MODE.ADD) executeAdd();
             else if(mode ==MODE.EDIT) executeEdit();
         }
@@ -72,7 +79,6 @@ public class AddItemController extends AbstractContainer{
 
     private void executeAdd() {
         item = new Item();
-        populateItem();
         MyLogger.log.trace(item.toString());
         ItemNonCompleteController controller = new ItemNonCompleteController(primaryStage);
         controller.setItem(item);
@@ -83,7 +89,6 @@ public class AddItemController extends AbstractContainer{
 
     private void executeEdit(){
         item = controller.getItem();
-        populateItem();
         controller.setItem(item);
         handler.handleController(controller);
         dialogStage.close();
@@ -102,6 +107,7 @@ public class AddItemController extends AbstractContainer{
         NumericValidator val = new NumericValidator();
         ArrayList<AbstractComponentValidationObject> validationObjects = new ArrayList<>();
         validationObjects.add(new JavaFXValidationObject(name,"Name", NumericValidator.NumberType.Plain));
+        validationObjects.add(new JavaFXValidationObject(technician, "Technician", NumericValidator.NumberType.Plain));
         return val.validate(validationObjects);
     }
 
@@ -133,7 +139,7 @@ public class AddItemController extends AbstractContainer{
 
     @Override
     public void handleController(ItemNonCompleteController controller) {
-        this.itemNonCompleteController = controller;
+//        this.itemNonCompleteController = controller;
     }
 
 

@@ -1,0 +1,387 @@
+
+--------------------------------------------------
+- Package: com.fp.fourBoxViewer.Boundaries
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 3
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 8
+
+    A: 0.25
+    I: 0.89
+    D: 0.14
+
+Abstract Classes:
+    com.fp.fourBoxViewer.Boundaries.Persistence
+
+Concrete Classes:
+    com.fp.fourBoxViewer.Boundaries.HibernateManager
+    com.fp.fourBoxViewer.Boundaries.HibernateManager$1
+    com.fp.fourBoxViewer.Boundaries.HibernateManager$LazyHolder
+
+Depends Upon:
+    com.fp.fourBoxViewer.Entity
+    java.io
+    java.lang
+    java.util
+    org.hibernate
+    org.hibernate.boot
+    org.hibernate.boot.registry
+    org.hibernate.query
+
+Used By:
+    com.fp.fourBoxViewer.Manager
+
+--------------------------------------------------
+- Package: com.fp.fourBoxViewer.Comparators
+--------------------------------------------------
+
+Stats:
+    Total Classes: 9
+    Concrete Classes: 9
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 4
+
+    A: 0
+    I: 0.8
+    D: 0.2
+
+Abstract Classes:
+
+Concrete Classes:
+    com.fp.fourBoxViewer.Comparators.ItemComparators
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemBoxComparatorAscending
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemBoxComparatorDescending
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemCompleteDateComparatorAscending
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemCompleteDateComparatorDescending
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemNameComparatorAscending
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemNameComparatorDescending
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemStartDateComparatorAscending
+    com.fp.fourBoxViewer.Comparators.ItemComparators$ItemStartDateComparatorDescending
+
+Depends Upon:
+    com.fp.fourBoxViewer.Entity
+    java.lang
+    java.time
+    java.util
+
+Used By:
+    com.fp.fourBoxViewer.Manager
+
+--------------------------------------------------
+- Package: com.fp.fourBoxViewer.Entity
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 4
+    Ce: 3
+
+    A: 0
+    I: 0.43
+    D: 0.57
+
+Abstract Classes:
+
+Concrete Classes:
+    com.fp.fourBoxViewer.Entity.Item
+    com.fp.fourBoxViewer.Entity.Type
+
+Depends Upon:
+    java.lang
+    java.time
+    java.util
+
+Used By:
+    com.fp.fourBoxViewer.Boundaries
+    com.fp.fourBoxViewer.Comparators
+    com.fp.fourBoxViewer.Manager
+    com.fp.fourBoxViewer.controller
+
+--------------------------------------------------
+- Package: com.fp.fourBoxViewer.Manager
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 2
+    Abstract Classes: 2
+
+    Ca: 1
+    Ce: 13
+
+    A: 0.5
+    I: 0.93
+    D: 0.43
+
+Abstract Classes:
+    com.fp.fourBoxViewer.Manager.AbstractContainer
+    com.fp.fourBoxViewer.Manager.MainContainer
+
+Concrete Classes:
+    com.fp.fourBoxViewer.Manager.FourBoxManager$itemControllerType
+    com.fp.fourBoxViewer.Manager.ItemManager
+
+Depends Upon:
+    com.fp.fourBoxViewer.Boundaries
+    com.fp.fourBoxViewer.Comparators
+    com.fp.fourBoxViewer.Entity
+    com.fp.fourBoxViewer.Util
+    com.fp.fourBoxViewer.controller
+    java.io
+    java.lang
+    java.time
+    java.util
+    javafx.collections
+    javafx.scene
+    javafx.stage
+    org.apache.logging.log4j
+
+Used By:
+    com.fp.fourBoxViewer.main
+
+--------------------------------------------------
+- Package: com.fp.fourBoxViewer.Util
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 4
+    Abstract Classes: 0
+
+    Ca: 3
+    Ce: 10
+
+    A: 0
+    I: 0.77
+    D: 0.23
+
+Abstract Classes:
+
+Concrete Classes:
+    com.fp.fourBoxViewer.Util.ConfirmationDialogObject
+    com.fp.fourBoxViewer.Util.Constants
+    com.fp.fourBoxViewer.Util.FX_LookUp
+    com.fp.fourBoxViewer.Util.MyLogger
+
+Depends Upon:
+    java.io
+    java.lang
+    java.net
+    java.util
+    javafx.fxml
+    javafx.scene
+    javafx.scene.control
+    javafx.scene.layout
+    javafx.stage
+    org.apache.logging.log4j
+
+Used By:
+    com.fp.fourBoxViewer.Manager
+    com.fp.fourBoxViewer.controller
+    com.fp.fourBoxViewer.main
+
+--------------------------------------------------
+- Package: com.fp.fourBoxViewer.controller
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 2
+    Abstract Classes: 2
+
+    Ca: 1
+    Ce: 9
+
+    A: 0.5
+    I: 0.9
+    D: 0.4
+
+Abstract Classes:
+    com.fp.fourBoxViewer.controller.AbstractItemController
+    com.fp.fourBoxViewer.controller.ItemControllerHandler
+
+Concrete Classes:
+    com.fp.fourBoxViewer.controller.AddItemController$MODE
+    com.fp.fourBoxViewer.controller.ItemCompleteController
+
+Depends Upon:
+    com.fp.fourBoxViewer.Entity
+    com.fp.fourBoxViewer.Util
+    java.lang
+    java.time
+    javafx.fxml
+    javafx.scene
+    javafx.scene.control
+    javafx.scene.layout
+    org.apache.logging.log4j
+
+Used By:
+    com.fp.fourBoxViewer.Manager
+
+--------------------------------------------------
+- Package: com.fp.fourBoxViewer.main
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 10
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    com.fp.fourBoxViewer.main.Main
+
+Depends Upon:
+    com.fp.fourBoxViewer.Manager
+    com.fp.fourBoxViewer.Util
+    java.lang
+    java.net
+    javafx.application
+    javafx.collections
+    javafx.fxml
+    javafx.scene
+    javafx.scene.layout
+    javafx.stage
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.net
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.time
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javafx.application
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javafx.collections
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javafx.fxml
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javafx.scene
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javafx.scene.control
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javafx.scene.layout
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javafx.stage
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.logging.log4j
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.hibernate
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.hibernate.boot
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.hibernate.boot.registry
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.hibernate.query
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+com.fp.fourBoxViewer.Boundaries,4,1,1,8,0.25,0.89,0.14,1
+com.fp.fourBoxViewer.Comparators,9,0,1,4,0,0.8,0.2,1
+com.fp.fourBoxViewer.Entity,2,0,4,3,0,0.43,0.57,1
+com.fp.fourBoxViewer.Manager,4,2,1,13,0.5,0.93,0.43,1
+com.fp.fourBoxViewer.Util,4,0,3,10,0,0.77,0.23,1
+com.fp.fourBoxViewer.controller,4,2,1,9,0.5,0.9,0.4,1
+com.fp.fourBoxViewer.main,1,0,0,10,0,1,0,1
+java.io,0,0,3,0,0,0,1,1
+java.lang,0,0,7,0,0,0,1,1
+java.net,0,0,2,0,0,0,1,1
+java.time,0,0,4,0,0,0,1,1
+java.util,0,0,5,0,0,0,1,1
+javafx.application,0,0,1,0,0,0,1,1
+javafx.collections,0,0,2,0,0,0,1,1
+javafx.fxml,0,0,3,0,0,0,1,1
+javafx.scene,0,0,4,0,0,0,1,1
+javafx.scene.control,0,0,2,0,0,0,1,1
+javafx.scene.layout,0,0,3,0,0,0,1,1
+javafx.stage,0,0,3,0,0,0,1,1
+org.apache.logging.log4j,0,0,3,0,0,0,1,1
+org.hibernate,0,0,1,0,0,0,1,1
+org.hibernate.boot,0,0,1,0,0,0,1,1
+org.hibernate.boot.registry,0,0,1,0,0,0,1,1
+org.hibernate.query,0,0,1,0,0,0,1,1

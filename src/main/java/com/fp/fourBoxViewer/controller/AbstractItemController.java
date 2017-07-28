@@ -17,6 +17,7 @@ import javafx.scene.layout.GridPane;
  */
 public abstract class AbstractItemController {
 
+
     protected Item item;
     protected  String ITEM_FXML = setView();
     @FXML Label name, box, dateStarted, dateCompleted;
@@ -30,7 +31,7 @@ public abstract class AbstractItemController {
         FXMLLoader loader = FX_LookUp.getLoader(ITEM_FXML);
         loader.setRoot(pane);
         loader.setController(this);
-        FX_LookUp.LoadResource(loader);
+        FX_LookUp.loadResource(loader);
     }
 
 
