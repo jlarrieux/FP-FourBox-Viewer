@@ -32,7 +32,7 @@ public class Item extends Observable {
     private boolean complete;
     private LocalDate dateStarted, dateCompleted;
     private String status;
-    private Type projectType;
+    private String projectType;
 
     @Transient
     private ArrayList<Observer> observers = new ArrayList<>();

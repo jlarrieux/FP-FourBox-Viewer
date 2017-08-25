@@ -89,6 +89,10 @@ public class ItemNonCompleteController extends AbstractItemController implements
     @Override
     protected void populate(){
         name.setText( item.getName());
+        technician.setText(item.getTechnician());
+        type.setText(item.getProjectType());
+        status.setText(item.getStatus());
+
 //        name.setFont(Font.font("Arial", FontPosture.ITALIC, 12));
 
     }

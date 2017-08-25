@@ -1,7 +1,11 @@
 
 
 
-
+.label.boxNumber{
+    -fx-font-size: 7pt;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #510CE8;
+}
 
 
 
@@ -23,6 +27,7 @@
 .label.live{
     -fx-font-size: 10pt;
     -fx-font-family: "Arial Black";
+    /*-fx-text-fill: #E8980C;*/
     -fx-text-fill: #1044a1;
 }
 
@@ -31,3 +36,18 @@
     -fx-font-size: 15pt;
     -fx-font-family: "Arial Black";
 }
+
+.label.technician{
+    -fx-font-size: 8pt;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #1044a1;
+
+}
+
+.label.status{
+    -fx-font-size: 6pt;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #1044a1;
+
+}
+

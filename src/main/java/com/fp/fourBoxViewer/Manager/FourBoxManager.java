@@ -13,10 +13,18 @@ import com.fp.fourBoxViewer.controller.ItemNonCompleteController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.geometry.Side;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -44,6 +52,7 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer,
     public FourBoxManager(Stage primaryStage){
         this.primaryStage = primaryStage;
         Initialize();
+//        loadBackground();
         loadNonCompleteInProperContainer();
         loadComplete();
     }
@@ -164,6 +173,26 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer,
         String s = newValue.toString();
         itemManager.sortCompleteList(s);
 
+    }
+
+    private void loadBackground(){
+        setCustomBackgroundText("1", urgentImportant);
+    }
+
+    private void setCustomBackgroundText(String myText, VBox box){
+        Text text = new Text(myText);
+        text.setFill(Color.RED);
+        WritableImage image = text.snapshot(new SnapshotParameters(), null);
+        double imageVPos = (box.getHeight() - image.getHeight()) / 2;
+        BackgroundImage backImage = new BackgroundImage(
+                image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                new BackgroundPosition(Side.LEFT, 7D, false, Side.TOP, imageVPos, false),
+                new BackgroundSize(image.getWidth(), image.getHeight(), false, false, false, false));
+        List<BackgroundImage> images = new ArrayList<>();
+        images.add(backImage);
+        box.setBackground(new Background(box.getBackground().getFills(), images));
     }
 
 

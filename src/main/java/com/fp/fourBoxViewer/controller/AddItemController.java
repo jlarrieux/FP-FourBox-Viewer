@@ -67,7 +67,7 @@ public class AddItemController extends AbstractContainer {
     private void getInput(){
         MyLogger.log.debug("getinput");
         if(!validate()){
-            populateItem();
+
             if(mode == MODE.ADD) executeAdd();
             else if(mode ==MODE.EDIT) executeEdit();
         }
@@ -79,6 +79,7 @@ public class AddItemController extends AbstractContainer {
 
     private void executeAdd() {
         item = new Item();
+        populateItem();
         MyLogger.log.trace(item.toString());
         ItemNonCompleteController controller = new ItemNonCompleteController(primaryStage);
         controller.setItem(item);
@@ -89,6 +90,7 @@ public class AddItemController extends AbstractContainer {
 
     private void executeEdit(){
         item = controller.getItem();
+        populateItem();
         controller.setItem(item);
         handler.handleController(controller);
         dialogStage.close();
@@ -96,9 +98,14 @@ public class AddItemController extends AbstractContainer {
 
 
     private void populateItem(){
+        if(item==null) System.out.print("Item is null");
+        if(name==null) System.out.print("Name is null");
         item.setName(name.getText());
         item.setBox(Integer.parseInt(boxLocation.getValue()));
         item.setDateStarted(startDatePicker.getValue());
+        item.setTechnician(technician.getText());
+        item.setStatus(status.getText());
+        item.setProjectType(projectType.getValue());
     }
 
 
@@ -123,10 +130,14 @@ public class AddItemController extends AbstractContainer {
     }
 
     private void populateGUI(){
-        Item item1 =controller. getItem();
+        Item item1 =controller.getItem();
         name.setText(item1.getName());
         boxLocation.setValue(String.valueOf(item1.getBox()));
         startDatePicker.setValue(item1.getDateStarted());
+        technician.setText(item1.getTechnician());
+        status.setText(item1.getStatus());
+        projectType.setValue(item1.getProjectType());
+
     }
 
     @FXML

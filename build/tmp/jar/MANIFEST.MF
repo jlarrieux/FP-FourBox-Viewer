@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Class-Path: [hibernate-entitymanager-5.2.10.Final.jar, log4j-core-2.8.
- 2.jar, log4j-api-2.8.2.jar, jfoenix-1.6.0.jar, mssql-jdbc-6.1.0.jre8.
+ 2.jar, log4j-api-2.8.2.jar, jfoenix-1.7.0.jar, mssql-jdbc-6.1.0.jre8.
  jar, numeric-validator-1.1-rc.jar, hibernate-core-5.2.10.Final.jar, h
  ibernate-commons-annotations-5.0.1.Final.jar, jboss-logging-3.3.0.Fin
  al.jar, dom4j-1.6.1.jar, hibernate-jpa-2.1-api-1.0.0.Final.jar, javas

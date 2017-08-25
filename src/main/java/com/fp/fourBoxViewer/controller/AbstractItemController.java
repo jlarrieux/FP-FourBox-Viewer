@@ -20,7 +20,7 @@ public abstract class AbstractItemController {
 
     protected Item item;
     protected  String ITEM_FXML = setView();
-    @FXML Label name, box, dateStarted, dateCompleted;
+    @FXML Label name, box, dateStarted, dateCompleted, technician, type, status;
     protected GridPane pane = new GridPane();
 
     abstract String setView();
