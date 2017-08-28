@@ -116,12 +116,12 @@ Stats:
     Concrete Classes: 2
     Abstract Classes: 2
 
-    Ca: 1
+    Ca: 2
     Ce: 13
 
     A: 0.5
-    I: 0.93
-    D: 0.43
+    I: 0.87
+    D: 0.37
 
 Abstract Classes:
     com.fp.fourBoxViewer.Manager.AbstractContainer
@@ -147,6 +147,7 @@ Depends Upon:
     org.apache.logging.log4j
 
 Used By:
+    com.fp.fourBoxViewer.controller
     com.fp.fourBoxViewer.main
 
 --------------------------------------------------
@@ -195,16 +196,16 @@ Used By:
 --------------------------------------------------
 
 Stats:
-    Total Classes: 4
-    Concrete Classes: 2
+    Total Classes: 5
+    Concrete Classes: 3
     Abstract Classes: 2
 
     Ca: 1
-    Ce: 9
+    Ce: 11
 
-    A: 0.5
-    I: 0.9
-    D: 0.4
+    A: 0.4
+    I: 0.92
+    D: 0.32
 
 Abstract Classes:
     com.fp.fourBoxViewer.controller.AbstractItemController
@@ -213,9 +214,11 @@ Abstract Classes:
 Concrete Classes:
     com.fp.fourBoxViewer.controller.AddItemController$MODE
     com.fp.fourBoxViewer.controller.ItemCompleteController
+    com.fp.fourBoxViewer.controller.ViewItemController
 
 Depends Upon:
     com.fp.fourBoxViewer.Entity
+    com.fp.fourBoxViewer.Manager
     com.fp.fourBoxViewer.Util
     java.lang
     java.time
@@ -223,6 +226,7 @@ Depends Upon:
     javafx.scene
     javafx.scene.control
     javafx.scene.layout
+    javafx.stage
     org.apache.logging.log4j
 
 Used By:
@@ -354,6 +358,22 @@ No stats available: package referenced, but not analyzed.
 - Package Dependency Cycles:
 --------------------------------------------------
 
+com.fp.fourBoxViewer.Manager
+    |
+    |   com.fp.fourBoxViewer.controller
+    |-> com.fp.fourBoxViewer.Manager
+
+com.fp.fourBoxViewer.controller
+    |
+    |   com.fp.fourBoxViewer.Manager
+    |-> com.fp.fourBoxViewer.controller
+
+com.fp.fourBoxViewer.main
+    |
+    |-> com.fp.fourBoxViewer.Manager
+    |   com.fp.fourBoxViewer.controller
+    |-> com.fp.fourBoxViewer.Manager
+
 
 --------------------------------------------------
 - Summary:
@@ -364,9 +384,9 @@ Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
 com.fp.fourBoxViewer.Boundaries,4,1,1,8,0.25,0.89,0.14,1
 com.fp.fourBoxViewer.Comparators,9,0,1,4,0,0.8,0.2,1
 com.fp.fourBoxViewer.Entity,2,0,4,3,0,0.43,0.57,1
-com.fp.fourBoxViewer.Manager,4,2,1,13,0.5,0.93,0.43,1
+com.fp.fourBoxViewer.Manager,4,2,2,13,0.5,0.87,0.37,1
 com.fp.fourBoxViewer.Util,4,0,3,10,0,0.77,0.23,1
-com.fp.fourBoxViewer.controller,4,2,1,9,0.5,0.9,0.4,1
+com.fp.fourBoxViewer.controller,5,2,1,11,0.4,0.92,0.32,1
 com.fp.fourBoxViewer.main,1,0,0,10,0,1,0,1
 java.io,0,0,3,0,0,0,1,1
 java.lang,0,0,7,0,0,0,1,1
@@ -379,7 +399,7 @@ javafx.fxml,0,0,3,0,0,0,1,1
 javafx.scene,0,0,4,0,0,0,1,1
 javafx.scene.control,0,0,2,0,0,0,1,1
 javafx.scene.layout,0,0,3,0,0,0,1,1
-javafx.stage,0,0,3,0,0,0,1,1
+javafx.stage,0,0,4,0,0,0,1,1
 org.apache.logging.log4j,0,0,3,0,0,0,1,1
 org.hibernate,0,0,1,0,0,0,1,1
 org.hibernate.boot,0,0,1,0,0,0,1,1

@@ -10,6 +10,7 @@ import com.fp.fourBoxViewer.Util.MyLogger;
 import com.github.jlarrieux.main.NumericValidator;
 import com.github.jlarrieux.main.ValidationObject.AbstractComponentValidationObject;
 import com.github.jlarrieux.main.ValidationObject.JavaFXValidationObject;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
@@ -34,6 +35,7 @@ public class AddItemController extends AbstractContainer {
     @FXML private ComboBox<String> boxLocation, projectType;
     @FXML private JFXDatePicker startDatePicker;
     @FXML private Label label;
+    @FXML private JFXButton addButton;
     private Stage dialogStage;
     private Item item;
 
@@ -114,7 +116,6 @@ public class AddItemController extends AbstractContainer {
         NumericValidator val = new NumericValidator();
         ArrayList<AbstractComponentValidationObject> validationObjects = new ArrayList<>();
         validationObjects.add(new JavaFXValidationObject(name,"Name", NumericValidator.NumberType.Plain));
-        validationObjects.add(new JavaFXValidationObject(technician, "Technician", NumericValidator.NumberType.Plain));
         return val.validate(validationObjects);
     }
 
@@ -125,6 +126,11 @@ public class AddItemController extends AbstractContainer {
          if(mode== MODE.EDIT){
              populateGUI();
              label.setText("Edit Item");
+             addButton.setText("Update");
+         }
+         else{
+             label.setText("Add item");
+             addButton.setText("Add");
          }
          dialogStage.showAndWait();
     }

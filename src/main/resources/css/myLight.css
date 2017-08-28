@@ -4,10 +4,24 @@
 .label.boxNumber{
     -fx-font-size: 7pt;
     -fx-font-family: "Arial Black";
-    -fx-text-fill: #510CE8;
+    -fx-text-fill: #510ce8;
+}
+
+.label.viewRegular{
+    -fx-font-size: 12pt;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #4069B4;
+
+
 }
 
 
+.label.viewBig{
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #4069B4;
+    -fx-font-size: 30pt;
+    -fx-underline: true
+}
 
 
 .label.top{
