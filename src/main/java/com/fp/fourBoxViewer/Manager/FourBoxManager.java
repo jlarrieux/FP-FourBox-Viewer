@@ -52,7 +52,7 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer,
     public FourBoxManager(Stage primaryStage){
         this.primaryStage = primaryStage;
         Initialize();
-//        loadBackground();
+
         loadNonCompleteInProperContainer();
         loadComplete();
     }
@@ -60,6 +60,7 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer,
 
     private void Initialize(){
         urgentImportant = (VBox) lookUp(FX_LookUp.VBOX_URGENT_IMPORTANT);
+        urgentImportant.setFillWidth(true);
         urgentNotImportant = (VBox) lookUp(FX_LookUp.VBOX_URGENT_NOT_IMPORTANT);
         notUrgentImportant = (VBox) lookUp(FX_LookUp.VBOX_NOT_URGENT_IMPORTANT);
         notUrgentNotImportant = (VBox) lookUp(FX_LookUp.VBOX_NOT_URGENT_NOT_IMPORTANT);
@@ -100,11 +101,11 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer,
 
 
     private void assignItemController(ItemNonCompleteController controller, boolean updateOrCreate){
-        MyLogger.log.debug("Number of children before: "+ urgentImportant.getChildren().size());
+//        MyLogger.log.debug("Number of children before: "+ urgentImportant.getChildren().size());
         Item item = controller.getItem();
         loadItem(controller);
         if(updateOrCreate) itemManager.updateOrCreate(item);
-        MyLogger.log.debug("Number of children after: "+ urgentImportant.getChildren().size());
+//        MyLogger.log.debug("Number of children after: "+ urgentImportant.getChildren().size());
     }
 
 
@@ -160,8 +161,10 @@ public class FourBoxManager extends AbstractContainer  implements MainContainer,
     private void loadItem(ItemNonCompleteController controller){
         Item item = controller.getItem();
         int box = item.getBox();
+//        GridPane gridPane = (GridPane) controller.getView();
         if(!item.isComplete()) {
-            if (box == 1) urgentImportant.getChildren().add(controller.getView());
+            if (box == 1)     urgentImportant.getChildren().add(controller.getView());
+
             else if (box == 2) notUrgentImportant.getChildren().add(controller.getView());
             else if (box == 3) urgentNotImportant.getChildren().add(controller.getView());
             else if (box == 4) notUrgentNotImportant.getChildren().add(controller.getView());

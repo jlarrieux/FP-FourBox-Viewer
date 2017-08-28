@@ -36,6 +36,7 @@ public class FX_LookUp {
     public static final String MY_LIGHT = getCSSResource("myLight.css");
     public static final String JMETRO_LIGHT_THEME_CSS =  getCSSResource("JMetroLight.css");
     public static final String ADD_ITEM_DIALOG_FXML =PREFIX2+ "addItemDialog.fxml";
+    public static final String VIEW_ITEM_DIALOG_FXML = PREFIX2+"viewItemDialog.fxml";
 
     private static String getCSSResource(String name){
         return  FX_LookUp.class.getResource(CSS_PREFIX+name).toExternalForm();

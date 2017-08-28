@@ -29,6 +29,7 @@ public class ItemNonCompleteController extends AbstractItemController implements
     public ItemNonCompleteController(Stage primaryStage){
         this.primaryStage = primaryStage;
         load();
+
     }
 
 
@@ -82,6 +83,11 @@ public class ItemNonCompleteController extends AbstractItemController implements
     @FXML
     private void handleRightClick(MouseEvent event){
         if(event.getButton() == MouseButton.SECONDARY) menu.show(pane,event.getScreenX(),event.getScreenY());
+        if(event.getButton()==MouseButton.PRIMARY && event.getClickCount()==2) handleDoubleClick();
+    }
+
+    private void handleDoubleClick(){
+        new ViewItemController(primaryStage, this);
     }
 
 

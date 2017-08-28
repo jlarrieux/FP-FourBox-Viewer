@@ -57,13 +57,13 @@
                               <Font name="System Bold" size="25.0" />
                            </font>
                         </Label>
-                        <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <GridPane.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </GridPane.margin>
                            <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" styleClass="boxNumber" text="2" />
-                              <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <content>
                                     <VBox id="vboxNotUrgentImportant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" />
                                  </content>
@@ -76,7 +76,7 @@
                            </GridPane.margin>
                            <children>
                               <Label styleClass="boxNumber" text="3" />
-                              <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <content>
                                     <VBox id="vBoxUrgentNotImportant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" />
                                  </content>
@@ -89,7 +89,7 @@
                            </GridPane.margin>
                            <children>
                               <Label styleClass="boxNumber" text="4" />
-                              <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <content>
                                     <VBox id="vBoxNotUrgentNotImportant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" />
                                  </content>
@@ -102,7 +102,7 @@
                            </GridPane.margin>
                            <children>
                               <Label styleClass="boxNumber" text="1" />
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <content>
                                     <VBox id="vBoxUrgentImportant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" />
                                  </content>

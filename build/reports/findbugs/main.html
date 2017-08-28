@@ -78,7 +78,7 @@
 <br/>
 </p>
 <h2>Metrics</h2>
-<p>728 lines of code analyzed,
+<p>757 lines of code analyzed,
 	in 31 classes, 
 	in 7 packages.</p>
 <table width="500" cellpadding="5" cellspacing="2">
@@ -89,23 +89,23 @@
 </tr>
 <tr class="tablerow0">
 <td>High Priority Warnings</td>
-<td align="right"/>
-<td align="right">0.00</td>
+<td align="right">2</td>
+<td align="right">2.64</td>
 </tr>
 <tr class="tablerow1">
 <td>Medium Priority Warnings</td>
 <td align="right">9</td>
-<td align="right">12.36</td>
+<td align="right">11.89</td>
 </tr>
 <tr class="$totalClass">
 <td>
 <b>Total Warnings</b>
 </td>
 <td align="right">
-<b>9</b>
+<b>11</b>
 </td>
 <td align="right">
-<b>12.36</b>
+<b>14.53</b>
 </td>
 </tr>
 </table>
@@ -120,6 +120,9 @@
 <ul>
 <li>
 <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
 </li>
 <li>
 <a href="#Warnings_STYLE">Dodgy code Warnings</a>
@@ -142,16 +145,22 @@
 </tr>
 <tr class="tablerow1">
 <td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
 <a href="#Warnings_STYLE">Dodgy code Warnings</a>
 </td>
 <td align="right">1</td>
 </tr>
-<tr class="tablerow0">
+<tr class="tablerow1">
 <td>
 <b>Total</b>
 </td>
 <td align="right">
-<b>9</b>
+<b>11</b>
 </td>
 </tr>
 </table>
@@ -279,6 +288,43 @@
 </tr>
 </table>
 <h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66054');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of AddItemController.item in com.fp.fourBoxViewer.controller.AddItemController.populateItem()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66054" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.controller.AddItemController<br/>In method com.fp.fourBoxViewer.controller.AddItemController.populateItem()<br/>Value contained in com.fp.fourBoxViewer.controller.AddItemController.item<br/>Dereferenced at AddItemController.java:[line 103]<br/>Known null at AddItemController.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66135');">
+<td>
+<span class="priority-1">NP</span>
+</td>
+<td>Possible null pointer dereference of AddItemController.name in com.fp.fourBoxViewer.controller.AddItemController.populateItem()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66135" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH">Bug type NP_NULL_ON_SOME_PATH (click for details)</a>
+<br/>In class com.fp.fourBoxViewer.controller.AddItemController<br/>In method com.fp.fourBoxViewer.controller.AddItemController.populateItem()<br/>Value contained in com.fp.fourBoxViewer.controller.AddItemController.name<br/>Dereferenced at AddItemController.java:[line 103]<br/>Known null at AddItemController.java:[line 102]</p>
+</td>
+</tr>
+</table>
+<h2>
 <a name="Warnings_STYLE">Dodgy code Warnings</a>
 </h2>
 <table class="warningtable" width="100%" cellspacing="0">
@@ -312,6 +358,18 @@
 This cast is unchecked, and not all instances of the type casted from can be cast to
 the type it is being cast to. Check that your program logic ensures that this
 cast will not fail.
+</p>
+
+    
+<h2>
+<a name="NP_NULL_ON_SOME_PATH">NP_NULL_ON_SOME_PATH: Possible null pointer dereference</a>
+</h2>
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
 </p>
 
     

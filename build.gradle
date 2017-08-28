@@ -86,12 +86,12 @@ tasks.withType(Pmd){
 
 jar{
     baseName='FourBox'
-    version ='0.9'
+    version ='0.9.1'
     exclude ('META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA','META-INF/*.txt', 'META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/DEPENDENCIES','META-INF/ASL2.0')
     manifest{
         attributes(
                 'Class-Path': configurations.runtimeClasspath.collect{it.getName()},
-                'Main-Class': 'fp.fourBoxViewer.main.Main'
+                'Main-Class': 'com.fp.fourBoxViewer.main.Main'
         )
 
 
