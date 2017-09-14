@@ -25,17 +25,11 @@ public class ViewItemController extends AbstractContainer {
 
 
 
-//    @FXML
-//    private void initialize(){
-//
-//    }
-
-
 
     private void buildAndShow(){
         dialogStage = FX_LookUp.getDialogStage(FX_LookUp.VIEW_ITEM_DIALOG_FXML, this, dialogStage);
         populateGUI();
-        dialogStage.showAndWait();
+        dialogStage.show();
     }
 
 
@@ -53,6 +47,13 @@ public class ViewItemController extends AbstractContainer {
     @FXML
     private void HandleCancel(){
         dialogStage.close();
+    }
+
+    @FXML
+    private void handleEdit(){
+        dialogStage.close();
+        new AddItemController(primaryStage,controller,AddItemController.MODE.EDIT, controller);
+
     }
 
 
