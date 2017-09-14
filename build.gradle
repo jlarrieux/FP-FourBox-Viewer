@@ -86,7 +86,7 @@ tasks.withType(Pmd){
 
 jar{
     baseName='FourBox'
-    version ='0.9.3'
+    version ='0.9.4'
     exclude ('META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA','META-INF/*.txt', 'META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/DEPENDENCIES','META-INF/ASL2.0')
     manifest{
         attributes(
