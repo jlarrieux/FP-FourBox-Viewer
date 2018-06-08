@@ -69,7 +69,6 @@ public class AddItemController extends AbstractContainer {
     private void getInput(){
         MyLogger.log.debug("getinput");
         if(!validate()){
-
             if(mode == MODE.ADD) executeAdd();
             else if(mode ==MODE.EDIT) executeEdit();
         }
